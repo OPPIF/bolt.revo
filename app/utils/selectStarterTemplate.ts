@@ -66,8 +66,8 @@ const templates: Template[] = STARTER_TEMPLATES.filter((t) => !t.name.includes('
 const parseSelectedTemplate = (llmOutput: string): { template: string; title: string } | null => {
   try {
     // Extract content between <templateName> tags
-    const templateNameMatch = llmOutput.match(/<templateName>(.*?)<\/templateName>/);
-    const titleMatch = llmOutput.match(/<title>(.*?)<\/title>/);
+  const templateNameMatch = llmOutput.match(/<templateName>([\s\S]*?)<\/templateName>/);
+  const titleMatch = llmOutput.match(/<title>([\s\S]*?)<\/title>/);
 
     if (!templateNameMatch) {
       return null;
